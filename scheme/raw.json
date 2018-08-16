@@ -1610,16 +1610,6 @@
     "isMethod": false
   },
   {
-    "name": "Sending files",
-    "parameters": [],
-    "isMethod": false
-  },
-  {
-    "name": "Inline mode objects",
-    "parameters": [],
-    "isMethod": false
-  },
-  {
     "name": "getMe",
     "parameters": [],
     "isMethod": false

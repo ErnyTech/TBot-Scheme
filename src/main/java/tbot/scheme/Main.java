@@ -2,6 +2,8 @@ package tbot.scheme;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
 
 public class Main {
@@ -55,6 +57,10 @@ public class Main {
 
     private static void write(String pathStr, WritterType writterType) {
         var path = Paths.get(pathStr);
+        write(path, writterType);
+    }
+
+    private static void write(Path path, WritterType writterType) {
         System.out.println("Generating scheme and writing to \"" + path.toAbsolutePath() + "\" ...");
 
         try {
@@ -103,6 +109,15 @@ public class Main {
             help();
             System.exit(0);
         }
+
+        if (args[0].equals("all")) {
+            try {
+                all();
+            } catch (IOException e) {
+                System.out.println("\t[ERROR] Failed when trying compile all json!");
+            }
+            System.exit(0);
+        }
     }
 
     private static String getJarPath() {
@@ -118,6 +133,26 @@ public class Main {
             return "\"" + jarPath + "\"";
         } else {
             return "\"" + "TBot Scheme.jar" + "\"";
+        }
+    }
+
+    private static void all() throws IOException {
+        var schemePath = Paths.get(System.getProperty("user.dir"), "scheme");
+
+        if (!Files.exists(schemePath)) {
+            Files.createDirectory(schemePath);
+        }
+
+        if (!Files.isDirectory(schemePath)) {
+            Files.delete(schemePath);
+            Files.createDirectory(schemePath);
+        }
+
+        for (WritterType writterType : WritterType.values()) {
+            var jsonPath = Paths.get(schemePath.toString(), writterType + ".json");
+            write(jsonPath, writterType);
+            System.out.println("\t[OK] Scheme for " + writterType + " generated and writted to " + jsonPath + "!");
+            System.out.println(System.lineSeparator());
         }
     }
 }
