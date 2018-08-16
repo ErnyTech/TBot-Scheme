@@ -61,6 +61,7 @@ public class Utils {
             }
         }
     }
+
     public static String patchParameterType(String type, String name, String description, WritterType writterType) {
         switch (writterType) {
             case java: {

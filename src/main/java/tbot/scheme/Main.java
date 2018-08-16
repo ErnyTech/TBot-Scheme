@@ -60,11 +60,11 @@ public class Main {
         try {
             new JsonWritter(writterType).writePretty(path);
         } catch (IOException e) {
-            System.out.println("\t[ERROR] Writing scheme to \"" + path.toAbsolutePath() + "\" failed");
+            System.out.println("\t[ERROR] Writing scheme to \"" + path.toAbsolutePath() + "\" failed!");
             System.exit(1);
         }
 
-        System.out.println("\t[OK] Scheme successful writted to \"" + path.toAbsolutePath() + "\"");
+        System.out.println("\t[OK] Scheme successful writted to \"" + path.toAbsolutePath() + "\"!");
     }
 
     private static void info() {
@@ -87,13 +87,13 @@ public class Main {
         builder.append(System.lineSeparator());
         builder.append("The writter type can be: ");
         builder.append(System.lineSeparator());
-        builder.append("\t - classic [default], TBot Scheme only apply small patch to scheme for improve use");
+        builder.append("\t - classic [default], TBot Scheme applies only a small patch to the scheme to improve its use");
         builder.append(System.lineSeparator());
-        builder.append("\t - java, TBot Scheme change scheme for improve use in Java project but don't use Java primitive");
+        builder.append("\t - java, TBot Scheme change scheme to improve use in the Java project, but do not use the Java primitive");
         builder.append(System.lineSeparator());
-        builder.append("\t - javaprimitive, TBot Scheme change scheme for improve use in Java project use Java primitive");
+        builder.append("\t - javaprimitive, TBot Scheme change scheme to improve use in the Java project and uses the Java primitive");
         builder.append(System.lineSeparator());
-        builder.append("\t - raw, TBot Scheme don't apply any small patch to scheme");
+        builder.append("\t - raw, TBot Scheme do not apply any patch to the scheme");
         builder.append(System.lineSeparator());
         System.out.print(builder);
     }

@@ -8,7 +8,6 @@ import tbot.scheme.wrapper.ObjectWrapper;
 import tbot.scheme.wrapper.ObjectsWrapper;
 import tbot.scheme.wrapper.ParameterWrapper;
 import tbot.scheme.wrapper.ParametersWrapper;
-import static tbot.scheme.Utils.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,19 +17,11 @@ public class TBotScheme {
     private final Document document;
     private final List<String> objectNames = new ArrayList<>();
     private final ObjectsWrapper objectsWrapper = new ObjectsWrapper();
-    private final WritterType writterType;
 
     public TBotScheme() {
         var htmlSource = Utils.getAsString(urlTBot);
-        System.out.println("\tParsing html source...");
+        System.out.println("\t[OK] parsing html source...");
         this.document = Jsoup.parse(htmlSource).normalise();
-        this.writterType = WritterType.classic;
-    }
-
-    public TBotScheme(WritterType writterType) {
-        var htmlSource = Utils.getAsString(urlTBot);
-        this.document = Jsoup.parse(htmlSource).normalise();
-        this.writterType = writterType;
     }
 
     public ObjectsWrapper getObjects() {
@@ -102,7 +93,7 @@ public class TBotScheme {
             if (!isMethod) {
                 this.objectsWrapper.addObject(new ObjectWrapper(objectName, parameters));
             } else {
-                this.objectsWrapper.addObject(new ObjectWrapper(patchObjectName(objectName, this.writterType), parameters, true, methodReturn));
+                this.objectsWrapper.addObject(new ObjectWrapper(objectName, parameters, true, methodReturn));
             }
         }
         System.out.println("\t[OK] object parameters and returns parsed!");
@@ -203,27 +194,22 @@ public class TBotScheme {
                 description = tds.get(3).text();
             }
 
-            parameters.addParameter(new ParameterWrapper(patchParameterName(name, this.writterType), patchParameterType(type, name, description, this.writterType), isRequired, description));
+            parameters.addParameter(new ParameterWrapper(name, type, isRequired, description));
         }
 
         return parameters;
     }
 
     private String getMethodReturn(Element methodDesc) {
-        if (this.writterType == WritterType.raw) {
-            return null;
-        }
-
         var texts = methodDesc.text().trim().split("\\.");
-        String type;
 
         for(String text : texts) {
             if (text.trim().equals("Returns True on success") || text.trim().equals("On success, True is returned")) {
-                return patchParameterType("Boolean", this.writterType);
+                return "Boolean";
             }
 
             if (text.trim().equals("Returns Int on success")) {
-                return patchParameterType("Integer", this.writterType);
+                return "Integer";
             }
 
             if (text.trim().equals("Returns the new invite link as String on success")) {
@@ -231,7 +217,7 @@ public class TBotScheme {
             }
 
             if (text.trim().equals("On success, an array of the sent Messages is returned")) {
-                return patchParameterType("Array of Message", this.writterType);
+                return "Array of Message";
             }
 
             var returnTexts = text.split("\\.");
@@ -246,11 +232,11 @@ public class TBotScheme {
                         }
 
                         if (text.contains("Array of " + word)) {
-                            return patchParameterType("Array of " + word, this.writterType);
+                            return "Array of " + word;
                         }
 
                         if (this.objectNames.stream().anyMatch(str -> str.trim().equals(word))) {
-                           return patchParameterType(word, this.writterType);
+                           return word;
                         }
                     }
                 }
