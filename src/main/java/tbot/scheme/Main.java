@@ -111,13 +111,13 @@ public class Main {
         try {
             jarPath = Main.class.getProtectionDomain().getCodeSource().getLocation().toURI().getPath();
         } catch (URISyntaxException e) {
-            return "\"" + "tbotscheme.jar" + "\"";
+            return "\"" + "TBot Scheme.jar" + "\"";
         }
 
         if (jarPath.contains(".jar")) {
             return "\"" + jarPath + "\"";
         } else {
-            return "\"" + "tbotscheme.jar" + "\"";
+            return "\"" + "TBot Scheme.jar" + "\"";
         }
     }
 }
