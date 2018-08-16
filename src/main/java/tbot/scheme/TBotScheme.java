@@ -56,6 +56,14 @@ public class TBotScheme {
             if (h4tags.get(i).text().equals("Inline mode methods")) {
                 continue;
             }
+            
+            if (h4tags.get(i).text().equals("Inline mode objects")) {
+                continue;
+            }
+            
+            if (h4tags.get(i).text().equals("Sending files")) {
+                continue;
+            }
 
             if (h4tags.get(i).text().equals("CallbackGame")) {
                 continue;
