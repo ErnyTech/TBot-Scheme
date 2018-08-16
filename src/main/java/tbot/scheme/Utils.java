@@ -11,26 +11,29 @@ import java.util.Scanner;
 
 public class Utils {
     public static String getAsString(String url) {
-        return download(url);
+        System.out.println("\t[OK] downloading \"" + url + "\"...");
+        var download = getAsStringHide(url);
+
+        if (download == null) {
+            System.out.println("\t[ERROR] Failed when downloading \"" + url + "\"");
+            System.exit(1);
+        }
+
+        System.out.println("\t[OK] downloaded \"" + url + "\" successful!");
+        return download;
     }
 
-    private static String download(String url)  {
-        System.out.println("\t[OK] downloading \"" + url + "\"...");
+    public static String getAsStringHide(String url) {
         try {
             var connection = new URL(url).openConnection();
             var scanner = new Scanner(connection.getInputStream()).useDelimiter("\\A");
 
             if (scanner.hasNext()) {
-                System.out.println("\t[OK] downloaded \"" + url + "\" successful!");
                 return scanner.next();
             } else {
-                System.out.println("\t[ERROR] Failed when downloading \"" + url + "\"");
-                System.exit(1);
                 return null;
             }
         } catch (IOException e) {
-            System.out.println("\t[ERROR] Failed when downloading \"" + url + "\"");
-            System.exit(1);
             return null;
         }
     }

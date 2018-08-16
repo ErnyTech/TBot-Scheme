@@ -1,5 +1,7 @@
 package tbot.scheme;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -14,6 +16,7 @@ import java.util.List;
 
 public class TBotScheme {
     private final static String urlTBot = "https://core.telegram.org/bots/api";
+    private final static String urlTBotScheme = "https://raw.githubusercontent.com/ErnyTech/TBot-Scheme/master/scheme/";
     private final Document document;
     private final List<String> objectNames = new ArrayList<>();
     private final ObjectsWrapper objectsWrapper = new ObjectsWrapper();
@@ -29,6 +32,12 @@ public class TBotScheme {
         setObjectNames(objectsNames);
         setObjectsWrapper(getBody());
         return this.objectsWrapper;
+    }
+
+    public static List<ObjectWrapper> getScheme(WritterType writterType) {
+        var scheme = Utils.getAsStringHide(urlTBotScheme + "/" + writterType + ".json");
+        var objectWrapperListTypeToken = new TypeToken<List<ObjectWrapper>>() {};
+        return new Gson().fromJson(scheme, objectWrapperListTypeToken.getType());
     }
 
     private Element getBody() {
