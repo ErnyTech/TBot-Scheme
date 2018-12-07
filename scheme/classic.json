@@ -470,7 +470,7 @@
         "name": "caption",
         "type": "String",
         "isRequired": true,
-        "description": "Optional. Caption for the audio, document, photo, video or voice, 0-200 characters"
+        "description": "Optional. Caption for the audio, document, photo, video or voice, 0-1024 characters"
       },
       {
         "name": "contact",
@@ -1393,7 +1393,7 @@
         "name": "caption",
         "type": "String",
         "isRequired": true,
-        "description": "Optional. Caption of the photo to be sent, 0-200 characters"
+        "description": "Optional. Caption of the photo to be sent, 0-1024 characters"
       },
       {
         "name": "parse_mode",
@@ -1429,7 +1429,7 @@
         "name": "caption",
         "type": "String",
         "isRequired": true,
-        "description": "Optional. Caption of the video to be sent, 0-200 characters"
+        "description": "Optional. Caption of the video to be sent, 0-1024 characters"
       },
       {
         "name": "parse_mode",
@@ -1489,7 +1489,7 @@
         "name": "caption",
         "type": "String",
         "isRequired": true,
-        "description": "Optional. Caption of the animation to be sent, 0-200 characters"
+        "description": "Optional. Caption of the animation to be sent, 0-1024 characters"
       },
       {
         "name": "parse_mode",
@@ -1543,7 +1543,7 @@
         "name": "caption",
         "type": "String",
         "isRequired": true,
-        "description": "Optional. Caption of the audio to be sent, 0-200 characters"
+        "description": "Optional. Caption of the audio to be sent, 0-1024 characters"
       },
       {
         "name": "parse_mode",
@@ -1597,7 +1597,7 @@
         "name": "caption",
         "type": "String",
         "isRequired": true,
-        "description": "Optional. Caption of the document to be sent, 0-200 characters"
+        "description": "Optional. Caption of the document to be sent, 0-1024 characters"
       },
       {
         "name": "parse_mode",
@@ -1718,7 +1718,7 @@
         "name": "caption",
         "type": "String",
         "isRequired": false,
-        "description": "Photo caption (may also be used when resending photos by file_id), 0-200 characters"
+        "description": "Photo caption (may also be used when resending photos by file_id), 0-1024 characters"
       },
       {
         "name": "parse_mode",
@@ -1767,7 +1767,7 @@
         "name": "caption",
         "type": "String",
         "isRequired": false,
-        "description": "Audio caption, 0-200 characters"
+        "description": "Audio caption, 0-1024 characters"
       },
       {
         "name": "parse_mode",
@@ -1846,7 +1846,7 @@
         "name": "caption",
         "type": "String",
         "isRequired": false,
-        "description": "Document caption (may also be used when resending documents by file_id), 0-200 characters"
+        "description": "Document caption (may also be used when resending documents by file_id), 0-1024 characters"
       },
       {
         "name": "parse_mode",
@@ -1919,7 +1919,7 @@
         "name": "caption",
         "type": "String",
         "isRequired": false,
-        "description": "Video caption (may also be used when resending videos by file_id), 0-200 characters"
+        "description": "Video caption (may also be used when resending videos by file_id), 0-1024 characters"
       },
       {
         "name": "parse_mode",
@@ -1998,7 +1998,7 @@
         "name": "caption",
         "type": "String",
         "isRequired": false,
-        "description": "Animation caption (may also be used when resending animation by file_id), 0-200 characters"
+        "description": "Animation caption (may also be used when resending animation by file_id), 0-1024 characters"
       },
       {
         "name": "parse_mode",
@@ -2047,7 +2047,7 @@
         "name": "caption",
         "type": "String",
         "isRequired": false,
-        "description": "Voice message caption, 0-200 characters"
+        "description": "Voice message caption, 0-1024 characters"
       },
       {
         "name": "parse_mode",
@@ -3589,7 +3589,7 @@
         "name": "caption",
         "type": "String",
         "isRequired": true,
-        "description": "Optional. Caption of the photo to be sent, 0-200 characters"
+        "description": "Optional. Caption of the photo to be sent, 0-1024 characters"
       },
       {
         "name": "parse_mode",
@@ -3667,7 +3667,7 @@
         "name": "caption",
         "type": "String",
         "isRequired": true,
-        "description": "Optional. Caption of the GIF file to be sent, 0-200 characters"
+        "description": "Optional. Caption of the GIF file to be sent, 0-1024 characters"
       },
       {
         "name": "parse_mode",
@@ -3745,7 +3745,7 @@
         "name": "caption",
         "type": "String",
         "isRequired": true,
-        "description": "Optional. Caption of the MPEG-4 file to be sent, 0-200 characters"
+        "description": "Optional. Caption of the MPEG-4 file to be sent, 0-1024 characters"
       },
       {
         "name": "parse_mode",
@@ -3811,7 +3811,7 @@
         "name": "caption",
         "type": "String",
         "isRequired": true,
-        "description": "Optional. Caption of the video to be sent, 0-200 characters"
+        "description": "Optional. Caption of the video to be sent, 0-1024 characters"
       },
       {
         "name": "parse_mode",
@@ -3889,7 +3889,7 @@
         "name": "caption",
         "type": "String",
         "isRequired": true,
-        "description": "Optional. Caption, 0-200 characters"
+        "description": "Optional. Caption, 0-1024 characters"
       },
       {
         "name": "parse_mode",
@@ -3955,7 +3955,7 @@
         "name": "caption",
         "type": "String",
         "isRequired": true,
-        "description": "Optional. Caption, 0-200 characters"
+        "description": "Optional. Caption, 0-1024 characters"
       },
       {
         "name": "parse_mode",
@@ -4009,7 +4009,7 @@
         "name": "caption",
         "type": "String",
         "isRequired": true,
-        "description": "Optional. Caption of the document to be sent, 0-200 characters"
+        "description": "Optional. Caption of the document to be sent, 0-1024 characters"
       },
       {
         "name": "parse_mode",
@@ -4363,7 +4363,7 @@
         "name": "caption",
         "type": "String",
         "isRequired": true,
-        "description": "Optional. Caption of the photo to be sent, 0-200 characters"
+        "description": "Optional. Caption of the photo to be sent, 0-1024 characters"
       },
       {
         "name": "parse_mode",
@@ -4417,7 +4417,7 @@
         "name": "caption",
         "type": "String",
         "isRequired": true,
-        "description": "Optional. Caption of the GIF file to be sent, 0-200 characters"
+        "description": "Optional. Caption of the GIF file to be sent, 0-1024 characters"
       },
       {
         "name": "parse_mode",
@@ -4471,7 +4471,7 @@
         "name": "caption",
         "type": "String",
         "isRequired": true,
-        "description": "Optional. Caption of the MPEG-4 file to be sent, 0-200 characters"
+        "description": "Optional. Caption of the MPEG-4 file to be sent, 0-1024 characters"
       },
       {
         "name": "parse_mode",
@@ -4567,7 +4567,7 @@
         "name": "caption",
         "type": "String",
         "isRequired": true,
-        "description": "Optional. Caption of the document to be sent, 0-200 characters"
+        "description": "Optional. Caption of the document to be sent, 0-1024 characters"
       },
       {
         "name": "parse_mode",
@@ -4627,7 +4627,7 @@
         "name": "caption",
         "type": "String",
         "isRequired": true,
-        "description": "Optional. Caption of the video to be sent, 0-200 characters"
+        "description": "Optional. Caption of the video to be sent, 0-1024 characters"
       },
       {
         "name": "parse_mode",
@@ -4681,7 +4681,7 @@
         "name": "caption",
         "type": "String",
         "isRequired": true,
-        "description": "Optional. Caption, 0-200 characters"
+        "description": "Optional. Caption, 0-1024 characters"
       },
       {
         "name": "parse_mode",
@@ -4729,7 +4729,7 @@
         "name": "caption",
         "type": "String",
         "isRequired": true,
-        "description": "Optional. Caption, 0-200 characters"
+        "description": "Optional. Caption, 0-1024 characters"
       },
       {
         "name": "parse_mode",
@@ -5482,6 +5482,18 @@
         "type": "PassportFile",
         "isRequired": true,
         "description": "Optional. Encrypted file with the selfie of the user holding a document, provided by the user; available for “passport”, “driver_license”, “identity_card” and “internal_passport”. The file can be decrypted and verified using the accompanying EncryptedCredentials."
+      },
+      {
+        "name": "translation",
+        "type": "Array of PassportFile",
+        "isRequired": true,
+        "description": "Optional. Array of encrypted files with translated versions of documents provided by the user. Available if requested for “passport”, “driver_license”, “identity_card”, “internal_passport”, “utility_bill”, “bank_statement”, “rental_agreement”, “passport_registration” and “temporary_registration” types. Files can be decrypted and verified using the accompanying EncryptedCredentials."
+      },
+      {
+        "name": "hash",
+        "type": "String",
+        "isRequired": true,
+        "description": "Base64-encoded element hash for using in PassportElementErrorUnspecified"
       }
     ],
     "isMethod": false
@@ -5710,6 +5722,96 @@
         "type": "Array of String",
         "isRequired": true,
         "description": "List of base64-encoded file hashes"
+      },
+      {
+        "name": "message",
+        "type": "String",
+        "isRequired": true,
+        "description": "Error message"
+      }
+    ],
+    "isMethod": false
+  },
+  {
+    "name": "PassportElementErrorTranslationFile",
+    "parameters": [
+      {
+        "name": "source",
+        "type": "String",
+        "isRequired": true,
+        "description": "Error source, must be translation_file"
+      },
+      {
+        "name": "type",
+        "type": "String",
+        "isRequired": true,
+        "description": "Type of element of the user's Telegram Passport which has the issue, one of “passport”, “driver_license”, “identity_card”, “internal_passport”, “utility_bill”, “bank_statement”, “rental_agreement”, “passport_registration”, “temporary_registration”"
+      },
+      {
+        "name": "file_hash",
+        "type": "String",
+        "isRequired": true,
+        "description": "Base64-encoded file hash"
+      },
+      {
+        "name": "message",
+        "type": "String",
+        "isRequired": true,
+        "description": "Error message"
+      }
+    ],
+    "isMethod": false
+  },
+  {
+    "name": "PassportElementErrorTranslationFiles",
+    "parameters": [
+      {
+        "name": "source",
+        "type": "String",
+        "isRequired": true,
+        "description": "Error source, must be translation_files"
+      },
+      {
+        "name": "type",
+        "type": "String",
+        "isRequired": true,
+        "description": "Type of element of the user's Telegram Passport which has the issue, one of “passport”, “driver_license”, “identity_card”, “internal_passport”, “utility_bill”, “bank_statement”, “rental_agreement”, “passport_registration”, “temporary_registration”"
+      },
+      {
+        "name": "file_hashes",
+        "type": "Array of String",
+        "isRequired": true,
+        "description": "List of base64-encoded file hashes"
+      },
+      {
+        "name": "message",
+        "type": "String",
+        "isRequired": true,
+        "description": "Error message"
+      }
+    ],
+    "isMethod": false
+  },
+  {
+    "name": "PassportElementErrorUnspecified",
+    "parameters": [
+      {
+        "name": "source",
+        "type": "String",
+        "isRequired": true,
+        "description": "Error source, must be unspecified"
+      },
+      {
+        "name": "type",
+        "type": "String",
+        "isRequired": true,
+        "description": "Type of element of the user's Telegram Passport which has the issue"
+      },
+      {
+        "name": "element_hash",
+        "type": "String",
+        "isRequired": true,
+        "description": "Base64-encoded element hash"
       },
       {
         "name": "message",
