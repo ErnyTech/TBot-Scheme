@@ -1,5 +1,10 @@
 [
   {
+    "name": "bot_api",
+    "schemeType": "classic",
+    "version": "4.1"
+  },
+  {
     "name": "Update",
     "parameters": [
       {

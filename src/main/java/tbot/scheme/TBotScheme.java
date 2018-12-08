@@ -6,10 +6,7 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
-import tbot.scheme.wrapper.ObjectWrapper;
-import tbot.scheme.wrapper.ObjectsWrapper;
-import tbot.scheme.wrapper.ParameterWrapper;
-import tbot.scheme.wrapper.ParametersWrapper;
+import tbot.scheme.wrapper.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,6 +15,7 @@ public class TBotScheme {
     private final static String urlTBot = "https://core.telegram.org/bots/api";
     private final static String urlTBotScheme = "https://raw.githubusercontent.com/ErnyTech/TBot-Scheme/master/scheme/";
     private final Document document;
+    private String botApi;
     private final List<String> objectNames = new ArrayList<>();
     private final ObjectsWrapper objectsWrapper = new ObjectsWrapper();
 
@@ -34,6 +32,10 @@ public class TBotScheme {
         return this.objectsWrapper;
     }
 
+    public String getBotApi() {
+        return this.botApi;
+    }
+
     public static List<ObjectWrapper> getScheme(WritterType writterType) {
         var scheme = Utils.getAsStringHide(urlTBotScheme + "/" + writterType + ".json");
         var objectWrapperListTypeToken = new TypeToken<List<ObjectWrapper>>() {};
@@ -45,6 +47,8 @@ public class TBotScheme {
     }
 
     private Elements getObjectNames() {
+        var botApiTag = getBody().getElementsByTag("p").get(1);
+        this.botApi = botApiTag.text().replace("Bot API ", "");
         var h4tags = getBody().getElementsByTag("h4");
         var objectNames = new Elements();
 

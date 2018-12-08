@@ -1,9 +1,6 @@
 package tbot.scheme;
 
-import tbot.scheme.wrapper.ObjectWrapper;
-import tbot.scheme.wrapper.ObjectsWrapper;
-import tbot.scheme.wrapper.ParameterWrapper;
-import tbot.scheme.wrapper.ParametersWrapper;
+import tbot.scheme.wrapper.*;
 
 import java.io.IOException;
 import java.net.URL;
